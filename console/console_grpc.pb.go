@@ -59,7 +59,7 @@ type ConsoleClient interface {
 	GetWalletLedger(ctx context.Context, in *AccountId, opts ...grpc.CallOption) (*WalletLedgerList, error)
 	// List (and optionally filter) storage data.
 	ListStorage(ctx context.Context, in *ListStorageRequest, opts ...grpc.CallOption) (*StorageList, error)
-	// List (and optionally filter) users.
+	// List (and optionally filter) accounts.
 	ListAccounts(ctx context.Context, in *ListAccountsRequest, opts ...grpc.CallOption) (*AccountList, error)
 	// List (and optionally filter) users.
 	ListUsers(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*UserList, error)
@@ -447,7 +447,7 @@ type ConsoleServer interface {
 	GetWalletLedger(context.Context, *AccountId) (*WalletLedgerList, error)
 	// List (and optionally filter) storage data.
 	ListStorage(context.Context, *ListStorageRequest) (*StorageList, error)
-	// List (and optionally filter) users.
+	// List (and optionally filter) accounts.
 	ListAccounts(context.Context, *ListAccountsRequest) (*AccountList, error)
 	// List (and optionally filter) users.
 	ListUsers(context.Context, *empty.Empty) (*UserList, error)

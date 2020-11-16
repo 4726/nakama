@@ -22,7 +22,7 @@
   "paths": {
     "/v2/console/account": {
       "get": {
-        "summary": "List (and optionally filter) users.",
+        "summary": "List (and optionally filter) accounts.",
         "operationId": "Console_ListAccounts",
         "responses": {
           "200": {
