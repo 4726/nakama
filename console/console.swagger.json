@@ -1179,8 +1179,8 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "description": "The unique identifier of the user account.",
+            "name": "username",
+            "description": "The unique username of the user account.",
             "in": "query",
             "required": false,
             "type": "string"
