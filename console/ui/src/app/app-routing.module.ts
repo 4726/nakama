@@ -16,9 +16,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent, LoginGuard} from './login/login.component';
 import {AuthenticationGuard} from './authentication.guard';
-import {HomeComponent} from './home/home.component';
 import {BaseComponent} from './base/base.component';
 import {GraphInitNodesResolver, StatusComponent} from './status/status.component';
+import {UsersComponent, UsersResolver} from './users/users.component';
 
 const routes: Routes = [
   {
@@ -27,7 +27,15 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'status', pathMatch: 'full' },
-      { path: '', component: StatusComponent, resolve: [GraphInitNodesResolver]},
+      { path: 'status', component: StatusComponent, resolve: [GraphInitNodesResolver]},
+      { path: 'users', component: UsersComponent, resolve: [UsersResolver]},
+      //{ path: 'config', component: ConfigComponent, resolve: []},
+      //{ path: 'modules', component: ModulesComponent, resolve: []},
+      //{ path: 'accounts', component: AccountsComponent, resolve: []},
+      //{ path: 'storage', component: StorageComponent, resolve: []},
+      //{ path: 'matches', component: MatchesComponent, resolve: []},
+      //{ path: 'leaderboards', component: LeaderboardsComponent, resolve: []},
+      //{ path: 'apiexplorer', component: ExplorerComponent, resolve: []},
     ]},
   {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
 
